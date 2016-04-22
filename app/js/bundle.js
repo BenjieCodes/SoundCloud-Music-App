@@ -25899,11 +25899,21 @@ var numOfObjects = '&limit=20';
 var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects;
 
 _jquery2['default'].getJSON(url).then(function (response) {
+  console.log(response);
   response.forEach(function (res) {
     var html = getArtists(res);
     (0, _jquery2['default'])('.artists').append(html);
   });
+
+  response.filter(function (res) {
+    var html = getSongs(res);
+    (0, _jquery2['default'])('.audiocontainer').append(html);
+  });
 });
+
+function getSongs(songs) {
+  return '<audio controls src=\'' + songs.stream_url + ' + \'/tracks?client_id=\' + ' + token + ' ></audio>';
+}
 
 function getArtists(artists) {
   return '\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  ';

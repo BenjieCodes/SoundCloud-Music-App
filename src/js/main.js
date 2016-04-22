@@ -12,11 +12,23 @@ var numOfObjects = '&limit=20'
 var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects;
 
 $.getJSON(url).then(function (response) {
+  console.log(response);
     response.forEach (function (res){
       var html = getArtists(res);
       $('.artists').append(html);
     })
+
+    response.filter (function (res){
+      var html = getSongs(res);
+      $('.audiocontainer').append(html);
+    })
 });
+
+function getSongs (songs) {
+  return `<audio controls src='${songs.stream_url} + '/tracks?client_id=' + ${token} ></audio>`;
+}
+
+
 
 function getArtists (artists) {
   return `

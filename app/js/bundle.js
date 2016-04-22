@@ -25894,14 +25894,20 @@ console.log(_lodash2['default'].VERSION);
 // This token allows you to use api contents
 var token = '41f6b5a26693fd92184ddd76aaeef8ef';
 // this variable gives you the number of content you'd like (I put 5)
-var numOfObjects = '&limit=5';
+var numOfObjects = '&limit=20';
 // this is the base url + the variables to grab the content/api endpoints
 var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects;
 
-_jquery2['default'].getJSON(url).then(function (songs) {
-
-    console.log(songs);
+_jquery2['default'].getJSON(url).then(function (response) {
+  response.forEach(function (res) {
+    var html = getArtists(res);
+    (0, _jquery2['default'])('.artists').append(html);
+  });
 });
+
+function getArtists(artists) {
+  return '\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  ';
+}
 
 },{"jquery":1,"lodash":2}]},{},[3])
 

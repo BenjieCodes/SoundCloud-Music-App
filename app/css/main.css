@@ -1,2 +1,20 @@
+body {
+  background: RGBA(168, 53, 53, 1);
+  color: white; }
+
+.title {
+  background: RGBA(196, 214, 176, 1);
+  text-align: center; }
+
+.audiocontainer {
+  background: RGBA(71, 121, 152, 1); }
+
+.searchcontainer {
+  background: RGBA(41, 31, 30, 1); }
+
+.resultscontainer {
+  background: RGBA(246, 71, 64, 1); }
+  .resultscontainer .artists {
+    float: right; }
 
 /*# sourceMappingURL=main.css.map */

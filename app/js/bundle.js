@@ -25924,8 +25924,13 @@ function getArtists(artists) {
 
 (0, _jquery2['default'])('button').on('click', function (event) {
 
-  return (0, _jquery2['default'])('input').append(searchBarInput);
-  console.log(searchBarInput);
+  function searchartists(search) {
+    return (0, _jquery2['default'])('input' + search);
+  }
+  (0, _jquery2['default'])('button').append(searchartists);
+  console.log(url);
+
+  event.preventDefault();
 });
 
 },{"jquery":1,"lodash":2}]},{},[3])

@@ -45,7 +45,11 @@ function getArtists (artists) {
 
   $('button').on ('click', function(event) {
 
-    return $('input').append(searchBarInput);
-    console.log(searchBarInput);
+    function searchartists (search) {
+      return $('input' + search);
+    }
+    $('button').append(searchartists);
+    console.log(url);
 
+    event.preventDefault();
   });

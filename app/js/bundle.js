@@ -25900,7 +25900,7 @@ var searchBarInput = '';
 
 var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=John Mayer';
 
-// This is used to pull data out from the web API using getSON and .then
+// 1. This is used to pull data out from the web API using getSON and .then
 _jquery2['default'].getJSON(url).then(function (response) {
   console.log(response);
   response.forEach(function (res) {
@@ -25914,11 +25914,19 @@ _jquery2['default'].getJSON(url).then(function (response) {
   // })
 });
 
-// function created to pull results for the album artwork, title of song, and username
+// 2. function created to pull results for the album artwork, title of song, and username
 function getArtists(artists) {
 
   return '\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  <audio controls src="' + artists.stream_url + '?client_id=' + token + '"></audio>\n  ';
 }
+
+// 3. function created to get search bar to work
+(0, _jquery2['default'])('button').on('click', function (event) {
+
+  event.preventDefault();
+
+  console.log('clicked');
+});
 
 },{"jquery":1,"lodash":2}]},{},[3])
 

@@ -15,7 +15,7 @@ var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects 
 
 
 
-// This is used to pull data out from the web API using getSON and .then
+// 1. This is used to pull data out from the web API using getSON and .then
 $.getJSON(url).then(function (response) {
   console.log(response);
     response.forEach (function (res){
@@ -29,8 +29,7 @@ $.getJSON(url).then(function (response) {
     // })
 });
 
-
-// function created to pull results for the album artwork, title of song, and username
+// 2. function created to pull results for the album artwork, title of song, and username
 function getArtists (artists) {
 
   return `
@@ -40,3 +39,13 @@ function getArtists (artists) {
   <audio controls src="${artists.stream_url}?client_id=${token}"></audio>
   `;
 }
+
+
+// 3. function created to get search bar to work
+  $('button').on ('click', function(event) {
+
+    event.preventDefault();
+
+    console.log('clicked');
+
+  });

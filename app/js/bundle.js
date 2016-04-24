@@ -25896,12 +25896,17 @@ var token = '41f6b5a26693fd92184ddd76aaeef8ef';
 // this variable gives you the number of content you'd like (I put 5)
 var numOfObjects = '&limit=20';
 
-// this variable is used with the 'q' filter search parameter
-var searchBarInput = (0, _jquery2['default'])('input').outerHTML;
+(0, _jquery2['default'])('button').on('click', function (event) {
+  console.log('button was clicked');
+  // this variable is used with the 'q' filter search parameter
+  var searchBarInput = (0, _jquery2['default'])('input').val();
+  // this is the base url + the variables to grab the content/api endpoints
+  var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchBarInput;
 
-// this is the base url + the variables to grab the content/api endpoints
-var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchBarInput;
+  console.log(url);
 
+  event.preventDefault();
+});
 // 1. This is used to pull data out from the web API using getSON and .then
 _jquery2['default'].getJSON(url).then(function (response) {
   console.log(response);
@@ -25923,10 +25928,6 @@ function getArtists(artists) {
 }
 
 // 3. button for search
-(0, _jquery2['default'])('button').on('click', function (event) {
-  console.log('button was clicked');
-  event.preventDefault();
-});
 
 },{"jquery":1,"lodash":2}]},{},[3])
 

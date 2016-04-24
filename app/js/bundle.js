@@ -25897,7 +25897,7 @@ var token = '41f6b5a26693fd92184ddd76aaeef8ef';
 var numOfObjects = '&limit=20';
 
 // this variable is used with the 'q' filter search parameter
-var searchBarInput = '';
+var searchBarInput = (0, _jquery2['default'])('input').outerHTML;
 
 // this is the base url + the variables to grab the content/api endpoints
 var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchBarInput;
@@ -25922,14 +25922,9 @@ function getArtists(artists) {
   return '\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  <audio controls src="' + artists.stream_url + '?client_id=' + token + '"></audio>\n  ';
 }
 
+// 3. button for search
 (0, _jquery2['default'])('button').on('click', function (event) {
-
-  function searchartists(search) {
-    return (0, _jquery2['default'])('input' + search);
-  }
-  (0, _jquery2['default'])('button').append(searchartists);
-  console.log(url);
-
+  console.log('button was clicked');
   event.preventDefault();
 });
 

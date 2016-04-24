@@ -25894,7 +25894,7 @@ console.log(_lodash2['default'].VERSION);
 // This token allows you to use api contents
 var token = '41f6b5a26693fd92184ddd76aaeef8ef';
 // this variable gives you the number of content you'd like (I put 5)
-var numOfObjects = '&limit=20';
+var numOfObjects = '&limit=5';
 // 3. button for search
 (0, _jquery2['default'])('button').on('click', function (event) {
   console.log('search button was clicked!');
@@ -25912,27 +25912,28 @@ var numOfObjects = '&limit=20';
       var html = getArtists(res);
       (0, _jquery2['default'])('.artists').append(html);
     });
+    response.forEach(function (res) {
+      var html = getSongs(res);
+      (0, _jquery2['default'])('.audiocontainer').select(html);
+      console.log(html);
+    });
   });
 
-  (0, _jquery2['default'])('.artists').on('click', function (event) {
-    var html = getSongs(res);
-    (0, _jquery2['default'])('.audiocontainer').append(html);
-    console.log(html);
-  });
+  // 2. function created to pull results for the album artwork, title of song, and username
+  function getArtists(artists) {
 
-  event.preventDefault();
+    return '\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  ';
+  }
+
+  // 4. function created to pull audio file from artists clicked
+  function getSongs(songs) {
+    (0, _jquery2['default'])('.artists').on('click', function (event) {
+      '<audio controls src=' + songs.stream_url + '?client_id=' + token + '></audio>';
+
+      event.preventDefault();
+    });
+  }
 });
-
-// 2. function created to pull results for the album artwork, title of song, and username
-function getArtists(artists) {
-
-  return '\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  ';
-}
-
-// 4. function created to pull audio file from artists clicked
-function getSongs(songs) {
-  return '\n  <audio controls src=' + songs.stream_url + '?client_id=' + token + '></audio>\n  ';
-}
 
 },{"jquery":1,"lodash":2}]},{},[3])
 

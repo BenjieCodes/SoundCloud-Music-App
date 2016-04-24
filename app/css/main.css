@@ -1,17 +1,29 @@
 body {
+  margin: 0 auto;
   max-width: 700px;
-  background: RGBA(168, 53, 53, 1);
+  background: black;
   color: white; }
 
+.container {
+  width: 100%; }
+
 .title {
-  background: RGBA(196, 214, 176, 1);
-  text-align: center; }
+  background: RGBA(38, 196, 133, 1);
+  color: RGBA(30, 40, 46, 1);
+  text-align: center;
+  font-size: 23px; }
 
 .audiocontainer {
-  background: RGBA(71, 121, 152, 1); }
+  background: RGBA(38, 196, 133, 1); }
+
+audio {
+  margin: 4px;
+  margin-left: 4.5%;
+  width: 90%; }
 
 .searchcontainer {
-  background: RGBA(41, 31, 30, 1); }
+  background: RGBA(135, 151, 175, 1);
+  margin: 0 auto; }
 
 .resultscontainer {
   background: RGBA(246, 71, 64, 1); }

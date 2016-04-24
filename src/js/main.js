@@ -23,9 +23,7 @@ $.getJSON(url).then(function (response) {
   console.log(response);
   response.forEach (function (res){
     var html = getArtists(res);
-    $('.artists').append(html);
-  })
-  response.forEach(function (res){
+    $('.resultscontainer').append(html);
     var html = getSongs(res)
     $('.audiocontainer').select(html);
     console.log(html);
@@ -37,9 +35,11 @@ $.getJSON(url).then(function (response) {
 function getArtists (artists) {
 
   return `
+  <div class="artistsection">
   <img src="${artists.artwork_url}">
   <p> ${artists.title}</p>
   <p> ${artists.user.username}</p>
+  </div>
   `;
 }
 

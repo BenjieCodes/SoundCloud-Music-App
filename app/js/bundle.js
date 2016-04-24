@@ -25910,9 +25910,7 @@ var numOfObjects = '&limit=5';
     console.log(response);
     response.forEach(function (res) {
       var html = getArtists(res);
-      (0, _jquery2['default'])('.artists').append(html);
-    });
-    response.forEach(function (res) {
+      (0, _jquery2['default'])('.resultscontainer').append(html);
       var html = getSongs(res);
       (0, _jquery2['default'])('.audiocontainer').select(html);
       console.log(html);
@@ -25922,7 +25920,7 @@ var numOfObjects = '&limit=5';
   // 2. function created to pull results for the album artwork, title of song, and username
   function getArtists(artists) {
 
-    return '\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  ';
+    return '\n  <div class="artistsection">\n  <img src="' + artists.artwork_url + '">\n  <p> ' + artists.title + '</p>\n  <p> ' + artists.user.username + '</p>\n  </div>\n  ';
   }
 
   // 4. function created to pull audio file from artists clicked

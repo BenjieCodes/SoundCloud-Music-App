@@ -1,8 +1,11 @@
+$defaultColor: RGBA(45, 175, 245, 1.00);
+$fontColor: RGBA(30, 40, 46, 1.00);
+
 body {
   margin: 0 auto;
   max-width: 700px;
   background: black;
-  color: white;
+  color: $fontColor;
 }
 
 .container {
@@ -10,32 +13,58 @@ body {
 }
 
 .title {
-  background: RGBA(38, 196, 133, 1.00);
-  color: RGBA(30, 40, 46, 1.00);
+  border-radius: 20px;
+  background: $defaultColor;
+  color: $fontColor;
   text-align: center;
   font-size: 23px;
 }
-.audiocontainer {
-  background: RGBA(38, 196, 133, 1.00);
+
+
+.musiccontainer {
+  background: $defaultColor;
+  border-radius: 20px;
 }
 
 audio {
   margin: 4px;
   margin-left: 4.5%;
   width: 90%;
+}
+
+input {
+  margin-left: 15%;
+  border-radius: 5px;
+  height: 20px;
+}
+
+button {
+  background-color: RGBA(4, 85, 151, 1.00);
+  color: $fontColor;
+  border-radius: 5px;
+
+
 
 }
 
 .searchcontainer {
-  background: RGBA(135, 151, 175, 1.00);
+  background: RGBA(0, 141, 244, 1.00);
   margin: 0 auto;
 }
 
 .resultscontainer {
-  background: RGBA(246, 71, 64, 1.00);
+  width: 100%;
+  overflow: auto;
+  background: RGBA(0, 141, 244, 1.00);
 
-  .artists {
-    float: right;
+  .artistsection {
+    width: 20%;
+    overflow: auto;
+    float: left;
+    background-color: RGBA(0, 100, 186, 1.00);
+    display: inline;
+
   }
+
 
 }

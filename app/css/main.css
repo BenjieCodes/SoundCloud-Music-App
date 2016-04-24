@@ -2,32 +2,50 @@ body {
   margin: 0 auto;
   max-width: 700px;
   background: black;
-  color: white; }
+  color: RGBA(30, 40, 46, 1); }
 
 .container {
   width: 100%; }
 
 .title {
-  background: RGBA(38, 196, 133, 1);
+  border-radius: 20px;
+  background: RGBA(45, 175, 245, 1);
   color: RGBA(30, 40, 46, 1);
   text-align: center;
   font-size: 23px; }
 
-.audiocontainer {
-  background: RGBA(38, 196, 133, 1); }
+.musiccontainer {
+  background: RGBA(45, 175, 245, 1);
+  border-radius: 20px; }
 
 audio {
   margin: 4px;
   margin-left: 4.5%;
   width: 90%; }
 
+input {
+  margin-left: 15%;
+  border-radius: 5px;
+  height: 20px; }
+
+button {
+  background-color: RGBA(4, 85, 151, 1);
+  color: RGBA(30, 40, 46, 1);
+  border-radius: 5px; }
+
 .searchcontainer {
-  background: RGBA(135, 151, 175, 1);
+  background: RGBA(0, 141, 244, 1);
   margin: 0 auto; }
 
 .resultscontainer {
-  background: RGBA(246, 71, 64, 1); }
-  .resultscontainer .artists {
-    float: right; }
+  width: 100%;
+  overflow: auto;
+  background: RGBA(0, 141, 244, 1); }
+  .resultscontainer .artistsection {
+    width: 20%;
+    overflow: auto;
+    float: left;
+    background-color: RGBA(0, 100, 186, 1);
+    display: inline; }
 
 /*# sourceMappingURL=main.css.map */

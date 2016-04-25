@@ -67,6 +67,7 @@ var searchForm = $('form');
 var results = $('.resultscontainer');
 
 searchForm.on('submit', function (event){
+  results.empty();
   event.preventDefault();
   var searchText = $('input').val();
   var token = '41f6b5a26693fd92184ddd76aaeef8ef';
@@ -75,14 +76,26 @@ searchForm.on('submit', function (event){
   console.log(searchURL);
 
   $.getJSON(searchURL).then(function (tracks){
+    console.log(tracks);
     tracks.forEach(function (track){
       var data = trackTemplate(track);
       results.append(data);
     });
+
   });
 });
 
+// 1. Add an click event listener to each artist section
+// 2. When I click on any of those, find the span tag inside of it
+// 3. With the span tag, get the content of the span tag. .text()
+// 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
 
+
+$('.resultscontainer').on ('click', 'span', function (event){
+    event.preventDefault();
+    console.log($(this));
+
+});
 
 
 function trackTemplate (track) {
@@ -90,6 +103,7 @@ function trackTemplate (track) {
       if (track.artwork_url === null) {
         x = `
         <div class="artistsection">
+          <span>${track.stream_url}</span>
           <img src="http://placehold.it/100x100">
           <p> ${track.title}</p>
         </div>
@@ -97,6 +111,7 @@ function trackTemplate (track) {
       } else {
         x =
         `<div class="artistsection">
+          <span>${track.stream_url}</span>
           <img src=${track.artwork_url}>
           <p> ${track.title}</p>
         </div>

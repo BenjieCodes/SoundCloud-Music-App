@@ -9919,6 +9919,7 @@ var searchForm = (0, _jquery2['default'])('form');
 var results = (0, _jquery2['default'])('.resultscontainer');
 
 searchForm.on('submit', function (event) {
+  results.empty();
   event.preventDefault();
   var searchText = (0, _jquery2['default'])('input').val();
   var token = '41f6b5a26693fd92184ddd76aaeef8ef';
@@ -9927,6 +9928,7 @@ searchForm.on('submit', function (event) {
   console.log(searchURL);
 
   _jquery2['default'].getJSON(searchURL).then(function (tracks) {
+    console.log(tracks);
     tracks.forEach(function (track) {
       var data = trackTemplate(track);
       results.append(data);
@@ -9934,12 +9936,22 @@ searchForm.on('submit', function (event) {
   });
 });
 
+// 1. Add an click event listener to each artist section
+// 2. When I click on any of those, find the span tag inside of it
+// 3. With the span tag, get the content of the span tag. .text()
+// 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
+
+(0, _jquery2['default'])('.resultscontainer').on('click', 'span', function (event) {
+  event.preventDefault();
+  console.log((0, _jquery2['default'])(this));
+});
+
 function trackTemplate(track) {
   var x = '';
   if (track.artwork_url === null) {
-    x = '\n        <div class="artistsection">\n          <img src="http://placehold.it/100x100">\n          <p> ' + track.title + '</p>\n        </div>\n        ';
+    x = '\n        <div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src="http://placehold.it/100x100">\n          <p> ' + track.title + '</p>\n        </div>\n        ';
   } else {
-    x = '<div class="artistsection">\n          <img src=' + track.artwork_url + '>\n          <p> ' + track.title + '</p>\n        </div>\n        ';
+    x = '<div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src=' + track.artwork_url + '>\n          <p> ' + track.title + '</p>\n        </div>\n        ';
   }
   return x;
 }

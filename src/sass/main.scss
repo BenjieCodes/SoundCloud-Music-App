@@ -3,7 +3,7 @@ $fontColor: RGBA(30, 40, 46, 1.00);
 
 body {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 1100px;
   background: black;
   color: $fontColor;
 }
@@ -23,17 +23,22 @@ body {
 
 .musiccontainer {
   background: $defaultColor;
-  border-radius: 20px;
+}
+
+
+.searchcontainer {
+  margin-top: 10px;
+  margin-left: 20%;
+
 }
 
 audio {
-  margin: 4px;
+  margin-top: 10px;
   margin-left: 4.5%;
   width: 90%;
 }
 
 input {
-  margin-left: 15%;
   border-radius: 5px;
   height: 20px;
 }
@@ -42,29 +47,57 @@ button {
   background-color: RGBA(4, 85, 151, 1.00);
   color: $fontColor;
   border-radius: 5px;
-
-
-
 }
 
-.searchcontainer {
-  background: RGBA(0, 141, 244, 1.00);
-  margin: 0 auto;
-}
 
 .resultscontainer {
-  width: 100%;
+  margin-left: 25%;
+  width: 50%;
   overflow: auto;
   background: RGBA(0, 141, 244, 1.00);
 
   .artistsection {
-    width: 20%;
-    overflow: auto;
+    margin-top: 20px;
+    margin-left: 13%;
+    width: 75%;
     float: left;
     background-color: RGBA(0, 100, 186, 1.00);
-    display: inline;
-
+    clear: both;
   }
+    .artistsection img {
+      width: 100%;
+    }
+    .artistsection p {
+      text-align: center;
+      width: 100%;
+      color: $fontColor;
+      background: $defaultColor;
+      font-size: 12px;
+
+    }
+
+
+}
+
+@media screen and (min-width: 401px) and (max-width: 750px) {
+  body {
+    background: red;
+  }
+
+  .resultscontainer {
+    margin: 0;
+    width: 100%;
+    float: left;
+  }
+
+  .artistsection  {
+    width: 10%;
+  }
+
+
+
+
+
 
 
 }

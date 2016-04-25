@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 1100px;
   background: black;
   color: RGBA(30, 40, 46, 1); }
 
@@ -15,16 +15,18 @@ body {
   font-size: 23px; }
 
 .musiccontainer {
-  background: RGBA(45, 175, 245, 1);
-  border-radius: 20px; }
+  background: RGBA(45, 175, 245, 1); }
+
+.searchcontainer {
+  margin-top: 10px;
+  margin-left: 20%; }
 
 audio {
-  margin: 4px;
+  margin-top: 10px;
   margin-left: 4.5%;
   width: 90%; }
 
 input {
-  margin-left: 15%;
   border-radius: 5px;
   height: 20px; }
 
@@ -33,19 +35,35 @@ button {
   color: RGBA(30, 40, 46, 1);
   border-radius: 5px; }
 
-.searchcontainer {
-  background: RGBA(0, 141, 244, 1);
-  margin: 0 auto; }
-
 .resultscontainer {
-  width: 100%;
+  margin-left: 25%;
+  width: 50%;
   overflow: auto;
   background: RGBA(0, 141, 244, 1); }
   .resultscontainer .artistsection {
-    width: 20%;
-    overflow: auto;
+    margin-top: 20px;
+    margin-left: 13%;
+    width: 75%;
     float: left;
     background-color: RGBA(0, 100, 186, 1);
-    display: inline; }
+    clear: both; }
+  .resultscontainer .artistsection img {
+    width: 100%; }
+  .resultscontainer .artistsection p {
+    text-align: center;
+    width: 100%;
+    color: RGBA(30, 40, 46, 1);
+    background: RGBA(45, 175, 245, 1);
+    font-size: 12px; }
+
+@media screen and (min-width: 401px) and (max-width: 750px) {
+  body {
+    background: red; }
+  .resultscontainer {
+    margin: 0;
+    width: 100%;
+    float: left; }
+  .artistsection {
+    width: 10%; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -9914,6 +9914,36 @@ console.log(_jquery2['default']);
 //
 // }
 
+var audio = (0, _jquery2['default'])('.audiocontainer');
+var searchForm = (0, _jquery2['default'])('form');
+var results = (0, _jquery2['default'])('.resultscontainer');
+
+searchForm.on('submit', function (event) {
+  event.preventDefault();
+  var searchText = (0, _jquery2['default'])('input').val();
+  var token = '41f6b5a26693fd92184ddd76aaeef8ef';
+  var numOfObjects = '&limit=15';
+  var searchURL = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchText;
+  console.log(searchURL);
+
+  _jquery2['default'].getJSON(searchURL).then(function (tracks) {
+    tracks.forEach(function (track) {
+      var data = trackTemplate(track);
+      results.append(data);
+    });
+  });
+});
+
+function trackTemplate(track) {
+  var x = '';
+  if (track.artwork_url === null) {
+    x = '\n        <div class="artistsection">\n          <img src="http://placehold.it/100x100">\n          <p> ' + track.title + '</p>\n        </div>\n        ';
+  } else {
+    x = '<div class="artistsection">\n          <img src=' + track.artwork_url + '>\n          <p> ' + track.title + '</p>\n        </div>\n        ';
+  }
+  return x;
+}
+
 },{"jquery":1}]},{},[2])
 
 

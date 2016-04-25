@@ -55,6 +55,7 @@ button {
   width: 50%;
   overflow: auto;
   background: RGBA(0, 141, 244, 1.00);
+  border-radius: 20px;
 
   .artistsection {
     margin-top: 20px;
@@ -63,9 +64,12 @@ button {
     float: left;
     background-color: RGBA(0, 100, 186, 1.00);
     clear: both;
+    border-radius: 20px;
   }
     .artistsection img {
       width: 100%;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
     }
     .artistsection p {
       text-align: center;
@@ -101,3 +105,8 @@ button {
 
 
 }
+
+// Questions to ask TIM
+/*  1. Why search button keeps refreshing
+    2. Why rwd doesn't work
+    3. Can't figure out audio src to only put one player at a time*/

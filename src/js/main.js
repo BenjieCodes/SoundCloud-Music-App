@@ -8,12 +8,14 @@ console.log(_.VERSION);
 var token = '41f6b5a26693fd92184ddd76aaeef8ef';
 // this variable gives you the number of content you'd like (I put 5)
 var numOfObjects = '&limit=15';
+// this variable is to get the original track and not a cover
+var original = '&track_type=original'
 // 3. button for search
 $('button').on ('click', function(event) {
 // this variable is used with the 'q' filter search parameter
 var searchBarInput = $('input').val();
 // this is the base url + the variables to grab the content/api endpoints
-var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchBarInput;
+var url = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + original + '&q=' + searchBarInput;
 
 // 1. This is used to pull data out from the web API using getSON and .then
 $.getJSON(url).then(function (response) {

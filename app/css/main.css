@@ -39,16 +39,20 @@ button {
   margin-left: 25%;
   width: 50%;
   overflow: auto;
-  background: RGBA(0, 141, 244, 1); }
+  background: RGBA(0, 141, 244, 1);
+  border-radius: 20px; }
   .resultscontainer .artistsection {
     margin-top: 20px;
     margin-left: 13%;
     width: 75%;
     float: left;
     background-color: RGBA(0, 100, 186, 1);
-    clear: both; }
+    clear: both;
+    border-radius: 20px; }
   .resultscontainer .artistsection img {
-    width: 100%; }
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px; }
   .resultscontainer .artistsection p {
     text-align: center;
     width: 100%;
@@ -65,5 +69,9 @@ button {
     float: left; }
   .artistsection {
     width: 10%; } }
+
+/*  1. Why search button keeps refreshing
+    2. Why rwd doesn't work
+    3. Can't figure out audio src to only put one player at a time*/
 
 /*# sourceMappingURL=main.css.map */

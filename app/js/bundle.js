@@ -25898,7 +25898,9 @@ var numOfObjects = '&limit=15';
 // this variable is to get the original track and not a cover
 var original = '&track_type=original';
 // 3. button for search
-(0, _jquery2['default'])('button').on('click', function (event) {
+(0, _jquery2['default'])('button').on('submit', function (event) {
+  event.preventDefault();
+
   // this variable is used with the 'q' filter search parameter
   var searchBarInput = (0, _jquery2['default'])('input').val();
   // this is the base url + the variables to grab the content/api endpoints

@@ -9919,13 +9919,12 @@ var searchForm = (0, _jquery2['default'])('form');
 var results = (0, _jquery2['default'])('.resultscontainer');
 
 searchForm.on('submit', function (event) {
-  results.empty();
   event.preventDefault();
+  results.empty();
   var searchText = (0, _jquery2['default'])('input').val();
   var token = '41f6b5a26693fd92184ddd76aaeef8ef';
   var numOfObjects = '&limit=15';
   var searchURL = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchText;
-  console.log(searchURL);
 
   _jquery2['default'].getJSON(searchURL).then(function (tracks) {
     console.log(tracks);
@@ -9941,9 +9940,8 @@ searchForm.on('submit', function (event) {
 // 3. With the span tag, get the content of the span tag. .text()
 // 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
 
-(0, _jquery2['default'])('.resultscontainer').on('click', 'span', function (event) {
+(0, _jquery2['default'])('.resultscontainer').on('click', '.artistsection', function (event) {
   event.preventDefault();
-  console.log((0, _jquery2['default'])(this));
 });
 
 function trackTemplate(track) {

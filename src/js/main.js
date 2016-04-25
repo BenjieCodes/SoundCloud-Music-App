@@ -67,13 +67,12 @@ var searchForm = $('form');
 var results = $('.resultscontainer');
 
 searchForm.on('submit', function (event){
-  results.empty();
   event.preventDefault();
+  results.empty();
   var searchText = $('input').val();
   var token = '41f6b5a26693fd92184ddd76aaeef8ef';
   var numOfObjects = '&limit=15';
   var searchURL = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchText;
-  console.log(searchURL);
 
   $.getJSON(searchURL).then(function (tracks){
     console.log(tracks);
@@ -91,9 +90,9 @@ searchForm.on('submit', function (event){
 // 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
 
 
-$('.resultscontainer').on ('click', 'span', function (event){
+$('.resultscontainer').on ('click', '.artistsection', function (event){
     event.preventDefault();
-    console.log($(this));
+
 
 });
 

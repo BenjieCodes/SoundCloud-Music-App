@@ -9940,19 +9940,18 @@ searchForm.on('submit', function (event) {
 // 3. With the span tag, get the content of the span tag. .text()
 // 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
 
-(0, _jquery2['default'])('.resultscontainer').on('click', '.artistsection', function (event) {
+(0, _jquery2['default'])('.resultscontainer').on('click', '.streamurl', function (event) {
   event.preventDefault();
-  var spantag = (0, _jquery2['default'])('span');
-  var streamurl = spantag.text();
+  var streamurl = (0, _jquery2['default'])('.streamurl').text();
   console.log(streamurl);
 });
 
 function trackTemplate(track) {
   var x = '';
   if (track.artwork_url === null) {
-    x = '\n        <div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src="http://placehold.it/100x100">\n          <p> ' + track.title + '</p>\n        </div>\n        ';
+    x = '\n        <div class="artistsection">\n          <div class="streamurl">\n            ' + track.stream_url + '\n          </div>\n          <img src="http://placehold.it/100x100">\n          <p> ' + track.title + '</p>\n        </div>\n        ';
   } else {
-    x = '<div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src=' + track.artwork_url + '>\n          <p> ' + track.title + '</p>\n        </div>\n        ';
+    x = '\n        <div class="artistsection">\n          <div class="streamurl">\n            ' + track.stream_url + '\n          </div>\n          <img src=' + track.artwork_url + '>\n          <p> ' + track.title + '</p>\n        </div>\n        ';
   }
   return x;
 }

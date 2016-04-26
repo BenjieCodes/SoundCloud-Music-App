@@ -90,12 +90,12 @@ searchForm.on('submit', function (event){
 // 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
 
 
-$('.resultscontainer').on ('click', '.artistsection', function (event){
+$('.resultscontainer').on ('click', '.streamurl', function (event) {
     event.preventDefault();
-    var spantag = $('span');
-    var streamurl = spantag.text();
+    var streamurl = $('.streamurl').text();
     console.log(streamurl);
 });
+
 
 
 function trackTemplate (track) {
@@ -103,15 +103,19 @@ function trackTemplate (track) {
       if (track.artwork_url === null) {
         x = `
         <div class="artistsection">
-          <span>${track.stream_url}</span>
+          <div class="streamurl">
+            ${track.stream_url}
+          </div>
           <img src="http://placehold.it/100x100">
           <p> ${track.title}</p>
         </div>
         `;
       } else {
-        x =
-        `<div class="artistsection">
-          <span>${track.stream_url}</span>
+        x =`
+        <div class="artistsection">
+          <div class="streamurl">
+            ${track.stream_url}
+          </div>
           <img src=${track.artwork_url}>
           <p> ${track.title}</p>
         </div>

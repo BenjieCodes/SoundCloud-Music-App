@@ -9914,7 +9914,7 @@ console.log(_jquery2['default']);
 //
 // }
 
-var audio = (0, _jquery2['default'])('.audiocontainer');
+var audio = (0, _jquery2['default'])('audio');
 var searchForm = (0, _jquery2['default'])('form');
 var results = (0, _jquery2['default'])('.resultscontainer');
 
@@ -9932,6 +9932,12 @@ searchForm.on('submit', function (event) {
       var data = trackTemplate(track);
       results.append(data);
     });
+
+    (0, _jquery2['default'])('.resultscontainer').on('click', '.artistsection', function (event) {
+      event.preventDefault();
+      var findaudiosrc = (0, _jquery2['default'])(this).find('span').text() + '?client_id=' + token;
+      audio.attr('src', findaudiosrc);
+    });
   });
 });
 
@@ -9939,20 +9945,6 @@ searchForm.on('submit', function (event) {
 // 2. When I click on any of those, find the span tag inside of it
 // 3. With the span tag, get the content of the span tag. .text()
 // 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
-
-(0, _jquery2['default'])('.resultscontainer').on('click', '.artistsection', function (event) {
-  event.preventDefault();
-  var findaudiosrc = (0, _jquery2['default'])(this).find('span').text();
-  console.log(findaudiosrc);
-  //     var html =
-  //
-  //
-  //     function addAudioSource (track) {
-  //       return `
-  //
-  //       `;
-  //     }
-});
 
 function trackTemplate(track) {
 

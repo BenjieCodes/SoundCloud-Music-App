@@ -62,7 +62,7 @@ console.log($);
 //
 // }
 
-var audio = $('.audiocontainer');
+var audio = $('audio');
 var searchForm = $('form');
 var results = $('.resultscontainer');
 
@@ -81,6 +81,11 @@ searchForm.on('submit', function (event){
       results.append(data);
     });
 
+  $('.resultscontainer').on ('click', '.artistsection', function (event) {
+    event.preventDefault();
+    var findaudiosrc = $(this).find('span').text() + '?client_id=' + token
+    audio.attr( 'src', findaudiosrc)
+    });
   });
 });
 
@@ -90,19 +95,6 @@ searchForm.on('submit', function (event){
 // 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
 
 
-$('.resultscontainer').on ('click', '.artistsection', function (event) {
-    event.preventDefault();
-    var findaudiosrc = $(this).find('span').text();
-    console.log(findaudiosrc);
-//     var html =
-//
-//
-//     function addAudioSource (track) {
-//       return `
-//
-//       `;
-//     }
-});
 
 
 

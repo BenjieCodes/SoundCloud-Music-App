@@ -84,42 +84,38 @@ searchForm.on('submit', function (event){
   });
 });
 
-// 1. Add an click event listener to each artist section
+// 1. Add an click event listener to each artist section //done
 // 2. When I click on any of those, find the span tag inside of it
 // 3. With the span tag, get the content of the span tag. .text()
 // 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
 
 
-$('.resultscontainer').on ('click', '.streamurl', function (event) {
+$('.resultscontainer').on ('click', '.artistsection', function (event) {
     event.preventDefault();
-    var streamurl = $('.streamurl').text();
-    console.log(streamurl);
+    var findaudiosrc = $(this).find('span').text();
+    console.log(findaudiosrc);
+//     var html =
+//
+//
+//     function addAudioSource (track) {
+//       return `
+//
+//       `;
+//     }
 });
 
 
 
 function trackTemplate (track) {
-  var x = '';
-      if (track.artwork_url === null) {
-        x = `
+
+    if (track.artwork_url === null) {
+          track.artwork_url = 'http://placehold.it/100x100';
+      }
+    return `
         <div class="artistsection">
-          <div class="streamurl">
-            ${track.stream_url}
-          </div>
-          <img src="http://placehold.it/100x100">
-          <p> ${track.title}</p>
-        </div>
-        `;
-      } else {
-        x =`
-        <div class="artistsection">
-          <div class="streamurl">
-            ${track.stream_url}
-          </div>
           <img src=${track.artwork_url}>
           <p> ${track.title}</p>
+          <span>${track.stream_url}</span>
         </div>
         `;
-      }
-        return x;
 }

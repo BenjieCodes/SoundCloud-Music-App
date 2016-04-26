@@ -9942,6 +9942,9 @@ searchForm.on('submit', function (event) {
 
 (0, _jquery2['default'])('.resultscontainer').on('click', '.artistsection', function (event) {
   event.preventDefault();
+  var spantag = (0, _jquery2['default'])('span');
+  var streamurl = spantag.text();
+  console.log(streamurl);
 });
 
 function trackTemplate(track) {

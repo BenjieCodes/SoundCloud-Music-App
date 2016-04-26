@@ -92,8 +92,9 @@ searchForm.on('submit', function (event){
 
 $('.resultscontainer').on ('click', '.artistsection', function (event){
     event.preventDefault();
-
-
+    var spantag = $('span');
+    var streamurl = spantag.text();
+    console.log(streamurl);
 });
 
 

@@ -81,7 +81,7 @@ searchForm.on('submit', function (event){
       results.append(data);
     });
 
-  $('.resultscontainer').on ('click', '.artistsection', function (event) {
+  $('.resultscontainer').on('click', '.artistsection', function (event) {
     event.preventDefault();
     var findaudiosrc = $(this).find('span').text() + '?client_id=' + token
     audio.attr( 'src', findaudiosrc)
@@ -105,9 +105,9 @@ function trackTemplate (track) {
       }
     return `
         <div class="artistsection">
+          <span>${track.stream_url}</span>
           <img src=${track.artwork_url}>
           <p> ${track.title}</p>
-          <span>${track.stream_url}</span>
         </div>
         `;
 }

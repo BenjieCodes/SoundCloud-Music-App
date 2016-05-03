@@ -2,111 +2,82 @@ $defaultColor: RGBA(45, 175, 245, 1.00);
 $fontColor: RGBA(30, 40, 46, 1.00);
 
 body {
-  margin: 0 auto;
-  max-width: 1100px;
-  background: black;
-  color: $fontColor;
-}
-
-.container {
-  width: 100%;
+  background: RGBA(34, 34, 34, 1.00);
 }
 
 .title {
-  border-radius: 20px;
-  background: $defaultColor;
-  color: $fontColor;
   text-align: center;
-  font-size: 23px;
+  text-decoration: line-through;
+  background: black;
+  margin: 10px 20%;
+  padding: 20px;
+  border: 2px solid RGBA(114, 114, 114, 1.00);
+  border-top-right-radius: 40%;
+  border-top-left-radius: 60%;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 40%;
 }
 
-
-.musiccontainer {
-  background: $defaultColor;
+.t1 {
+  color: RGBA(237, 20, 91, 1.00);
 }
 
-
-.searchcontainer {
-  margin-top: 10px;
-  margin-left: 20%;
-
+.t2 {
+  color: RGBA(255, 103, 0, 1.00);
 }
 
-audio {
-  margin-top: 10px;
-  margin-left: 4.5%;
-  width: 90%;
+.t3 {
+  color: RGBA(0, 119, 175, 1.00);
 }
 
-span {
-  display: none;
+.t4 {
+  color: RGBA(0, 168, 122, 1.00);
 }
 
+.audiocontainer {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.searchbar {
+  text-align: center;
+}
 
 input {
-  border-radius: 5px;
-  height: 20px;
+  background: black;
+  color: RGBA(0, 168, 122, 1.00);
+  border: 1px solid RGBA(0, 119, 175, 1.00);
+  padding: 10px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 button {
-  background-color: RGBA(4, 85, 151, 1.00);
-  color: $fontColor;
-  border-radius: 5px;
+  padding: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: RGBA(237, 20, 91, 1.00);
+  color: RGBA(0, 168, 122, 1.00);
+  border: 1px solid RGBA(0, 119, 175, 1.00);
+  font-weight: bolder;
 }
 
 
-.resultscontainer {
-  margin-left: 25%;
-  width: 50%;
-  overflow: auto;
-  background: RGBA(0, 141, 244, 1.00);
-  border-radius: 20px;
-
-  .artistsection {
-    margin-top: 20px;
-    margin-left: 13%;
-    width: 75%;
-    float: left;
-    background-color: RGBA(0, 100, 186, 1.00);
-    clear: both;
-    border-radius: 20px;
-  }
-    .artistsection img {
-      width: 100%;
-      border-top-right-radius: 20px;
-      border-top-left-radius: 20px;
-    }
-    .artistsection p {
-      text-align: center;
-      width: 100%;
-      color: $fontColor;
-      background: $defaultColor;
-      font-size: 12px;
-
-    }
-
-
+.artistsection {
+  margin: 30px auto;
+  text-align: center;
+  border: 2px solid RGBA(237, 20, 91, 1.00);
 }
 
-@media screen and (min-width: 401px) and (max-width: 750px) {
-  body {
-    background: red;
-  }
-
-  .resultscontainer {
-    margin: 0;
-    width: 100%;
-    float: left;
-  }
-
-  .artistsection  {
-    width: 10%;
-  }
-
-
+.artistsection span {
+  display: none;
 }
 
-// Questions to ask TIM
-/*  1. Why search button keeps refreshing
-    2. Why rwd doesn't work
-    3. Can't figure out audio src to only put one player at a time*/
+.artistsection img {
+  border: 2px solid RGBA(255, 103, 0, 1.00);
+}
+
+.artistsection p {
+  margin: 0;
+  color: white;
+}

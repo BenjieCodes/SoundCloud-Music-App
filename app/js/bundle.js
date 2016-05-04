@@ -9890,7 +9890,7 @@ function trackTemplate(track) {
   if (track.artwork_url === null) {
     track.artwork_url = 'http://placehold.it/100x100';
   }
-  return '\n        <div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src=' + track.artwork_url + '>\n          <p> Title: ' + track.title + '</p>\n        </div>\n        ';
+  return '\n        <div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src=' + track.artwork_url + '>\n          <p>"' + track.title + '"</p>\n        </div>\n        ';
 }
 
 },{"jquery":1}]},{},[2])

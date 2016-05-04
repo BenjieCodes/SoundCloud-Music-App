@@ -46,7 +46,7 @@ function trackTemplate (track) {
         <div class="artistsection">
           <span>${track.stream_url}</span>
           <img src=${track.artwork_url}>
-          <p> Title: ${track.title}</p>
+          <p>"${track.title}"</p>
         </div>
         `;
 }

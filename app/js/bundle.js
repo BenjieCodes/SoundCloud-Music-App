@@ -9843,6 +9843,7 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
+// Find project in W4D4H file.
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -9850,8 +9851,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
-
-console.log(_jquery2['default']);
 
 var audio = (0, _jquery2['default'])('audio');
 var searchForm = (0, _jquery2['default'])('form');
@@ -9866,7 +9865,6 @@ searchForm.on('submit', function (event) {
   var searchURL = 'https://api.soundcloud.com/tracks?client_id=' + token + numOfObjects + '&q=' + searchText;
 
   _jquery2['default'].getJSON(searchURL).then(function (tracks) {
-    console.log(tracks);
     tracks.forEach(function (track) {
       var data = trackTemplate(track);
       results.append(data);
@@ -9881,16 +9879,15 @@ searchForm.on('submit', function (event) {
 });
 
 // 1. Add an click event listener to each artist section //done
-// 2. When I click on any of those, find the span tag inside of it
-// 3. With the span tag, get the content of the span tag. .text()
-// 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url)
+// 2. When I click on any of those, find the span tag inside of it //done
+// 3. With the span tag, get the content of the span tag. .text() //done
+// 4. Update the source attribute of my player with that stream url (make sure to add the client id to stream_url) //add
 
 function trackTemplate(track) {
-
   if (track.artwork_url === null) {
     track.artwork_url = 'http://placehold.it/100x100';
   }
-  return '\n        <div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src=' + track.artwork_url + '>\n          <p>"' + track.title + '"</p>\n        </div>\n        ';
+  return '\n        <div class="artistsection">\n          <span>' + track.stream_url + '</span>\n          <img src=' + track.artwork_url + '>\n          <p>"' + track.title + '"</p>\n        </div>\n           ';
 }
 
 },{"jquery":1}]},{},[2])

@@ -1,5 +1,5 @@
 # Benjie's Soundcloud App
-Application which quickly searches SoundCloud music content without Ads!
+Application that quickly searches SoundCloud content without Ads!
 
 
 ### After build, application taught me how to:
@@ -7,7 +7,7 @@ Application which quickly searches SoundCloud music content without Ads!
 * have a strong understanding of making an AJAX request and dealing with the response
 * have an understanding of how to manage state in your application
 * learn how to handle empty values gracefully in a specific property
-* create a rwd (responsive web design) page
+* create a CSS responsive web design page 
 
 
 ### Deployment
